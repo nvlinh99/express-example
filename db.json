@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyen Vo Quynh Huong"
+    },
+    {
+      "id": 2,
+      "name": "Vuong Cat Tuong"
+    },
+    {
+      "name": "Nguyễn Khánh Anh",
+      "phone": "0828887693"
+    }
+  ]
+}

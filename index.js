@@ -1,4 +1,6 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
+
 var userRoute = require('./routes/user.route');
 var port = 3000;
 
@@ -9,10 +11,11 @@ app.set('views', './views');
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
-
+app.use(cookieParser());
 
 app.use(express.static('public'));
 app.use('/users', userRoute);
+
 
 // Routes
 app.get('/', function(req, res) {

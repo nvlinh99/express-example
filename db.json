@@ -1,16 +1,18 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Nguyen Vo Quynh Huong"
+      "name": "Vuong Cat Tuong",
+      "phone": "0828887693",
+      "id": "_vXE8IZq3",
+      "email": "vctuong@gmail.com",
+      "password": "1234"
     },
     {
-      "id": 2,
-      "name": "Vuong Cat Tuong"
-    },
-    {
-      "name": "Nguyễn Khánh Anh",
-      "phone": "0828887693"
+      "name": "Nguyen Vo Quynh Huong",
+      "phone": "0828887693",
+      "id": "1lzbD0KSW",
+      "email": "nvqhuong@gmail.com",
+      "password": "1234"
     }
   ]
 }

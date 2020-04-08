@@ -9,7 +9,7 @@ var router = express.Router();
 router.get('/', authMiddleware.requiredAuth, controller.index);
 
 router.get('/cookie', function(req, res, next) {
-    res.cookie('user-id', 12345);
+    res.cookie('token', 12345);
     res.send('Cookie saved !');
 });
 

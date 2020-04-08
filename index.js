@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var cookieParser = require('cookie-parser');
 
@@ -15,7 +17,7 @@ app.set('views', './views');
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
-app.use(cookieParser('nvlinh99'));
+app.use(cookieParser(process.env.session_secret));
 
 app.use(express.static('public'));
 app.use('/users',authMiddleware.requiredAuth, userRoute);

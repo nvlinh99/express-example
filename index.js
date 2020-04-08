@@ -15,7 +15,7 @@ app.set('views', './views');
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
-app.use(cookieParser());
+app.use(cookieParser('nvlinh99'));
 
 app.use(express.static('public'));
 app.use('/users',authMiddleware.requiredAuth, userRoute);

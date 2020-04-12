@@ -6,8 +6,10 @@ var cookieParser = require('cookie-parser');
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
 var productRoute = require('./routes/product.route');
+var cartRoute = require('./routes/cart.route');
 
 var authMiddleware = require('./middlewares/auth.middleware');
+var sessionMiddleware = require('./middlewares/session.middleware');
 
 var port = 3000;
 
@@ -20,10 +22,12 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
 app.use(cookieParser(process.env.session_secret));
 
+app.use(sessionMiddleware);
 app.use(express.static('public'));
 app.use('/users',authMiddleware.requiredAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
+app.use('/cart', cartRoute);
 
 
 // Routes

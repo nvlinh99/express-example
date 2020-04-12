@@ -13,6 +13,18 @@
       "id": "1lzbD0KSW",
       "email": "nvqhuong@gmail.com",
       "password": "1234"
+    },
+    {
+      "name": "Vuong Cat Tuong",
+      "phone": "0828887693",
+      "id": "RJmdoECHo",
+      "avatar": "uploads/317045ce83b8cd38d644656fa2fc29b4"
+    },
+    {
+      "name": "Nguyen Vo Quynh Huong",
+      "phone": "0828887693",
+      "id": "O0ajZslIT",
+      "avatar": "uploads/19a7e0325dbe7572bd0a689e2be6e8e8"
     }
   ],
   "products": [

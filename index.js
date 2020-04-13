@@ -2,11 +2,13 @@ require('dotenv').config();
 
 var express = require('express');
 var cookieParser = require('cookie-parser');
+var csurf = require('csurf');
 
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
 var productRoute = require('./routes/product.route');
 var cartRoute = require('./routes/cart.route');
+var transferRoute = require('./routes/transfer.route');
 
 var authMiddleware = require('./middlewares/auth.middleware');
 var sessionMiddleware = require('./middlewares/session.middleware');
@@ -21,6 +23,7 @@ app.set('views', './views');
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
 app.use(cookieParser(process.env.session_secret));
+app.use(csurf({ cookie: true }));
 
 app.use(sessionMiddleware);
 app.use(express.static('public'));
@@ -28,6 +31,7 @@ app.use('/users',authMiddleware.requiredAuth, userRoute);
 app.use('/auth', authRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
+app.use('/transfer', authMiddleware.requiredAuth, transferRoute);
 
 
 // Routes

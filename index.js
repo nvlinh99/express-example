@@ -12,6 +12,7 @@ var authRoute = require('./routes/auth.route');
 var productRoute = require('./routes/product.route');
 var cartRoute = require('./routes/cart.route');
 var transferRoute = require('./routes/transfer.route');
+var apiProductRoute = require('./api/routes/product.route');
 
 var authMiddleware = require('./middlewares/auth.middleware');
 var sessionMiddleware = require('./middlewares/session.middleware');
@@ -35,7 +36,7 @@ app.use('/auth', authRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
 app.use('/transfer', authMiddleware.requiredAuth, transferRoute);
-
+app.use('/api/products',apiProductRoute);
 
 // Routes
 app.get('/', function(req, res) {
